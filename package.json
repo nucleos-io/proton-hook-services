@@ -1,0 +1,15 @@
+{
+  "name": "proton-hook-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nucleos",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "proton-hook": "^1.0.0"
+  }
+}
