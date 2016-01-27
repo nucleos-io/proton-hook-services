@@ -1,10 +1,10 @@
 'use strict'
 
 let path = require('path')
-let Hook = require('proton-hook')
+let Quark = require('proton-quark')
 let _ = require('lodash')
 
-module.exports = class ServicesHook extends Hook {
+module.exports = class ServicesQuark extends Quark {
 
   constructor(proton) {
     super(proton)

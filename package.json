@@ -1,5 +1,5 @@
 {
-  "name": "proton-hook-services",
+  "name": "proton-quark-services",
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.0.0",
-    "proton-hook": "^1.0.0",
+    "proton-quark": "^1.0.0",
     "require-all": "^2.0.0"
   }
 }
