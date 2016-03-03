@@ -38,13 +38,12 @@ class ServicesQuark extends Quark {
       const service = new Service(this.proton)
       service.fileName = fileName
       service.expose(service)
-      this.bindToApp(service)
+      this._addServiceToApp(service)
       return service
     })
   }
 
-  bindToApp(...args) {
-    const service = args[0]
+  _addServiceToApp(service) {
     this.proton.app.services[service.name] = service
   }
 
