@@ -37,7 +37,7 @@ class ServicesQuark extends Quark {
     _.forEach(this._services, (Service, fileName) => {
       const service = new Service(this.proton)
       service.fileName = fileName
-      service.expose(service)
+      service.expose()
       this._addServiceToApp(service)
       return service
     })
@@ -55,7 +55,7 @@ class ServicesQuark extends Quark {
    * @return {Array} - All services exported values as an array
    */
   get _services() {
-    const modelsPath = path.join(this.proton.app.path, '/models')
+    const modelsPath = path.join(this.proton.app.path, '/services')
     return require('require-all')(modelsPath)
   }
 
