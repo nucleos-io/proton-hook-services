@@ -37,7 +37,7 @@ class ServicesQuark extends Quark {
     _.forEach(this._services, (Service, fileName) => {
       const service = new Service(this.proton)
       service.fileName = fileName
-      service.expose()
+      // service.expose()
       this._addServiceToApp(service)
       return service
     })
