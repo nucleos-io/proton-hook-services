@@ -23,8 +23,10 @@ class ServicesQuark extends Quark {
    * @author Luis Hernandez
    */
   configure() {
-    if (!this.proton.app.services)
-      this.proton.app.services = {}
+    return new Promise(resolve => {
+      if (!this.proton.app.services) this.proton.app.services = {}
+      resolve()
+    })
   }
 
   /**
@@ -34,12 +36,14 @@ class ServicesQuark extends Quark {
    * @author Luis Hernandez
    */
   initialize() {
-    _.forEach(this._services, (Service, fileName) => {
-      const service = new Service(this.proton)
-      service.fileName = fileName
-      // service.expose()
-      this._addServiceToApp(service)
-      return service
+    return new Promise(resolve => {
+      _.forEach(this._services, (Service, fileName) => {
+        const service = new Service(this.proton)
+        service.fileName = fileName
+        this._addServiceToApp(service)
+        return service
+      })
+      resolve()
     })
   }
 
@@ -55,8 +59,12 @@ class ServicesQuark extends Quark {
    * @return {Array} - All services exported values as an array
    */
   get _services() {
-    const modelsPath = path.join(this.proton.app.path, '/services')
+    const modelsPath = path.join(this.proton.app.path, '/api/services')
     return require('require-all')(modelsPath)
+  }
+
+  get name() {
+    return 'proton-quark-services'
   }
 
 }
