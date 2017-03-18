@@ -1,6 +1,6 @@
 {
   "name": "proton-quark-services",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "lodash": "^4.0.0",
     "mocha": "^3.2.0",
     "proton-koa": "^3.0.2",
-    "proton-quark": "^1.0.0",
+    "proton-quark": "^2.0.0",
     "proton-service": "^1.0.5",
     "require-all": "^2.0.0"
   }
